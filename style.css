@@ -3,8 +3,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100vh; 
     background-color: #f0f0f0;
+    margin: 0; 
+    padding: 10px; 
+    box-sizing: border-box; /
 }
 
 .container {
@@ -13,27 +16,48 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    max-width: 90%; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+h1 {
+    font-size: 2em; 
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.5;
 }
 
 .guess-area {
     margin-top: 20px;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 10px; 
 }
 
 #guessInput {
     padding: 8px;
-    width: 80px;
+    width: 150px;
+    max-width: 100%; 
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
 }
 
-#checkBtn {
+#checkBtn, #resetBtn {
     background-color: #4CAF50;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 10px;
+    font-size: 1em;
+    white-space: nowrap; 
 }
 
 #checkBtn:hover {
@@ -43,69 +67,40 @@ body {
 #message {
     margin-top: 15px;
     font-size: 1.1em;
+    min-height: 30px; 
 }
 
 #resetBtn {
     background-color: #008CBA;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
     margin-top: 15px;
+    display: none; 
 }
 
 #resetBtn:hover {
     background-color: #007bb5;
 }
 
+/* Media Queries for smaller screens */
+@media screen and (max-width: 600px) { 
+    .container {
+        padding: 15px; 
+        max-width: 100%; 
+    }
 
-@media (max-width : 900px){
-    .container{
-        width: 80%;
-        height: 75vh;
+    h1 {
+        font-size: 1.8em; 
     }
-    .container h1 {
-        font-size: 50px;
+
+    p, #message {
+        font-size: 1em; 
     }
-    .container p {
-        font-size: 41px;
-        padding: 16px;
-        font-family: 'Times New Roman', Times, serif;
+
+    .guess-area {
+        flex-direction: column; 
+        align-items: center; 
     }
 
     #guessInput {
-        padding: 8px;
-        width: 143px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        height: 47px;
-        font-size: 19px;   
-    }
-
-    #checkBtn {
-        width: 143px;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-left: 10px;
-        margin: 20px;
-        height: 60px;
-        font-size: 14px;
-        font-weight: 500;
-        
-    }
-    #resetBtn {
-    background-color: #008CBA;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 15px;
-    height: 49px;
-    width: 111px;
-    font-size: 16px;
+        width: 100%; 
     }
 }
