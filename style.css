@@ -63,7 +63,7 @@ body {
 @media (max-width : 900px){
     .container{
         width: 80%;
-        height: 610px;
+        height: 75vh;
     }
     .container h1 {
         font-size: 50px;
@@ -71,7 +71,7 @@ body {
     .container p {
         font-size: 41px;
         padding: 16px;
-        font-family: cursive;
+        font-family: 'Times New Roman', Times, serif;
     }
 
     #guessInput {
@@ -90,6 +90,7 @@ body {
         border-radius: 4px;
         cursor: pointer;
         margin-left: 10px;
+        margin: 20px;
         height: 60px;
         font-size: 14px;
         font-weight: 500;
