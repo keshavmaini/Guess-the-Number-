@@ -7,17 +7,53 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+
+    <!-- Name Screen -->
+    <div id="nameScreen" class="screen">
+        <h2>Enter Your Name</h2>
+        <input type="text" id="playerName" placeholder="Enter your name" />
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="container" style="display: none;">
         <h1>Guess the Number!</h1>
         <p>I'm thinking of a number between 1 and 50. Can you guess it?</p>
+
         <div class="guess-area">
-            <input type="number" id="guessInput" min="1" max="50">
+            <input type="number" id="guessInput" min="1" max="50" />
             <button id="checkBtn">Check My Guess</button>
         </div>
+
         <p id="message"></p>
-        <button id="resetBtn" style="display: none;">Play Again</button>
+        <button id="resetBtn">Play Again</button>
+
+        <!-- Leaderboard -->
+        <h3>🏆 Leaderboard</h3>
+        <ul id="leaderboard"></ul>
     </div>
 
     <script src="script.js"></script>
+
+    <!-- Firebase -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBaPn5GpXFFL0fmo5G53DPACJ_N4e7BqOI",
+            authDomain: "guess-the-number-game-118df.firebaseapp.com",
+            projectId: "guess-the-number-game-118df",
+            storageBucket: "guess-the-number-game-118df.appspot.com",
+            messagingSenderId: "988639062304",
+            appId: "1:988639062304:web:35aa15d59951ce9e2dcf45"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        window.db = db;
+    </script>
+
 </body>
 </html>
